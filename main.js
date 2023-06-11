@@ -1,9 +1,12 @@
 import './style.css';
 import Alpine from 'alpinejs';
+import main from './public/components/main/';
+import header from './public/components/header/';
 
-const AlpineTest = () => {
+export const AlpineTest = () => {
   return {
     greetings: "Hi!",
+    field: '',
     init: function () {
       this.greetings = 'XD';
     }
@@ -18,7 +21,6 @@ const root = document.getElementById('app');
 root.setAttribute('x-data', 'alpineTest');
 
 root.innerHTML = `
-  <div x-data="alpineTest">
-    <h1 x-text="greetings"></h1>
-  </div>
+  ${header}
+  ${main}
 `;
